@@ -9,6 +9,9 @@ bind {{ redis_bind_interface }}
 unixsocket {{ redis_unixsocket }}
 {% endif %}
 
+{% if redis_pass %}
+requirepass {{ redis_pass }}
+{% endif %}
 timeout {{ redis_timeout }}
 
 loglevel {{ redis_loglevel }}
